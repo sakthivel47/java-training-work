@@ -11,21 +11,21 @@ public class CountLetters {
 		System.out.println("Enter a single word (letters only, please): ");
 		String word = sc.nextLine().toUpperCase();
 		
+		int index = 0;
+		
 		try {
 			for(int i = 0; i < word.length(); i++) {
-				counts[word.charAt(i) - 'A']++;
-			}
-			for(int i = 0; i < counts.length; i++) {
-				if(counts[i] != 0) {
-					System.out.println((char)(i + 'A') + ": " + counts[i]);
-				}
+				index = word.charAt(i);
+				counts[index - 'A']++;
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("Not a letter");
-			e.printStackTrace();
+			System.out.println((char)index + " is not a letter");
 		}
- 
+		for(int i = 0; i < counts.length; i++) {
+			if(counts[i] != 0) {
+				System.out.println((char)(i + 'A') + ": " + counts[i]);
+			}
+		}
 		sc.close();
 	}
-
 }

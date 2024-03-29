@@ -21,8 +21,15 @@ public class TextFileHandler {
 
 		System.out.println("Writing coutries and capitals that matches the given conditions");
 
-		// taking the arguments given as input to startWith variable
-		char startsWith = args[0].charAt(0);
+		char startsWith = 0;
+		
+		// handling the exception
+		try {
+			// taking the arguments given as input to startWith variable
+			startsWith = args[0].charAt(0);
+		} catch(ArrayIndexOutOfBoundsException e) {  // handling exception if argument not given
+			System.err.println("No arguments given as input\nArgument usage: <character>");
+		}
 
 		// storing the filename with extension that is to be created
 		String newFileName = "countries_" + Character.toString(startsWith) + ".csv";
