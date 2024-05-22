@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Customer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+</head>
+<body>
+    <h2>Add Customer Form</h2>
+    <form name="addCustomer" onsubmit="return validateForm()" >
+        <table border-radious>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" /></td>
+                <td><span id="nameError" style="color:red;"></span></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email" /></td>
+                <td><span id="emailError" style="color:red;"></span></td>
+            </tr>
+            <tr>
+                <td>Contact:</td>
+                <td><input type="text" name="contact" /></td>
+                <td><span id="contactError" style="color:red;"></span></td>
+            </tr>
+            <tr>
+                <td>Account Type:</td>
+                <td>
+                    <select name="accountType">
+                        <option value="Savings">Savings</option>
+                        <option value="Current">Current</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Add Customer" /></td>
+            </tr>
+        </table>
+    </form>
+    <br />
+    <table id="customerTable">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Account Type</th>
+        </tr>
+    </table>
+</body>
+</html>
