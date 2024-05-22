@@ -1,3 +1,5 @@
+const customerList = [];
+
 function validateForm() {
     var name = document.forms["addCustomer"]["name"].value;
     var email = document.forms["addCustomer"]["email"].value;
@@ -34,6 +36,10 @@ function validateForm() {
         contact: contact,
         accountType: accountType
     };
+
+    customerList.push(customer);
+
+    console.log(customerList);
 
     document.getElementById("customerTable").innerHTML += "<tr><td>" + customer.name + "</td><td>" + customer.email + "</td><td>" + customer.contact + "</td><td>" + customer.accountType + "</td></tr>";
 
